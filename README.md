@@ -6,6 +6,20 @@ Suspense-friendly async React elements for common situations
 npm i react-async-elements
 ```
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents**
+
+- [API](#api)
+  - [`<Img>`](#img)
+  - [`<Script>`](#script)
+- [Todo](#todo)
+- [Playing with Suspense](#playing-with-suspense)
+- [Authors](#authors)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## API
 
 ### `<Img>`
@@ -13,6 +27,7 @@ npm i react-async-elements
 **props**
 
 - `src: string`
+- `cache?`: Optionally pass your own instance of `simple-cache-provider`
 - anything else you can pass to an `<img>` tag
 
 ```js
@@ -38,8 +53,9 @@ export default App;
 **props**
 
 - `src: string`
-- anything else you can pass to an `<script>` tag
 - `children?: () => React.ReactNode` - This render prop will only execute _after_ the script has loaded.
+- `cache?`: Optionally pass your own instance of `simple-cache-provider`
+- anything else you can pass to an `<script>` tag
 
 ```js
 import React from 'react';
@@ -60,6 +76,13 @@ function App() {
 
 export default App;
 ```
+
+## Todo
+
+- [ ] `<Video>`
+- [ ] `<Audio>`
+- [ ] `<Iframe>`
+- [ ] Better error handling
 
 ## Playing with Suspense
 
