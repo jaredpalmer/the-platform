@@ -28,3 +28,7 @@ export const Script = ({ cache, children, ...props }) => {
 
   return children;
 };
+
+Script.defaultProps = {
+  cache,
+};
