@@ -14,6 +14,11 @@ npm i react-async-elements
 - [API](#api)
   - [`<Img>`](#img)
   - [`<Script>`](#script)
+  - [`<Video>`](#todo)
+  - [`<Audio>`](#todo)
+  - [`<IFrame>`](#todo)
+  - [`<Embed>`](#todo)
+  - [`<Style>`](#todo)
 - [Todo](#todo)
 - [Playing with Suspense](#playing-with-suspense)
 - [Authors](#authors)
@@ -81,7 +86,9 @@ export default App;
 
 - [ ] `<Video>`
 - [ ] `<Audio>`
-- [ ] `<Iframe>`
+- [ ] `<IFrame>`
+- [ ] `<Embed>`
+- [ ] `<Style>`
 - [ ] Better error handling
 
 ## Playing with Suspense
