@@ -10,7 +10,10 @@ npm i react-async-elements
 
 ### `<Img>`
 
+**props**
+
 - `src: string`
+- anything else you can pass to an `<img>` tag
 
 ```js
 import React from 'react';
@@ -30,21 +33,13 @@ function App() {
 export default App;
 ```
 
-### `<Video>`
-
-- `src: string`
-
-**todo**
-
-### `<Audio>`
-
-- `src: string`
-
-**todo**
-
 ### `<Script>`
 
+**props**
+
 - `src: string`
+- anything else you can pass to an `<script>` tag
+- `children?: () => React.ReactNode` - This render prop will only execute _after_ the script has loaded.
 
 ```js
 import React from 'react';
