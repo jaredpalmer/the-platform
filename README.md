@@ -55,7 +55,7 @@ export default App;
 - `src: string`
 - `children?: () => React.ReactNode` - This render prop will only execute _after_ the script has loaded.
 - `cache?`: Optionally pass your own instance of `simple-cache-provider`
-- anything else you can pass to an `<script>` tag
+- anything else you can pass to a `<script>` tag
 
 ```js
 import React from 'react';
