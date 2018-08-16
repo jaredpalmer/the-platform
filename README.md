@@ -129,11 +129,7 @@ function App() {
       <h1>Meavy Boy - Compassion</h1>
       {/* source: http://freemusicarchive.org/music/Meavy_Boy/EP_71_to_20/Compassion */}
       <React.Placeholder delayMs={300} fallback={'loading...'}>
-        <Audio
-          src="https://file-dnzavydoqu.now.sh/"
-          preload="auto"
-          autoPlay
-        />
+        <Audio src="https://file-dnzavydoqu.now.sh/" preload="auto" autoPlay />
       </React.Placeholder>
     </div>
   );
