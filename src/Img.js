@@ -25,7 +25,7 @@ const resource = createResource(load, ({ src }) => src);
 export const Img = ({ cache, ...props }) => {
   resource.read(cache, props);
   // intercept
-  const { onError, ...rest } = props;
+  const { onLoad, onError, ...rest } = props;
   return <img {...rest} />;
 };
 
