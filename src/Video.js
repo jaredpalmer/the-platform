@@ -3,11 +3,11 @@ import { createResource } from 'simple-cache-provider';
 import { cache } from './cache';
 
 function load(attributes) {
+  const { src, ...attrs } = attributes;
   return new Promise((resolve, reject) => {
     const video = document.createElement('video');
-    Object.keys(attributes).forEach(name =>
-      video.setAttribute(name, attributes[name])
-    );
+    video.src = src;
+    Object.keys(attrs).forEach(name => video.setAttribute(name, attrs[name]));
     waitForReadyState(video, resolve.bind(null, src));
   });
 }
