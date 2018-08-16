@@ -3,7 +3,7 @@ import { createCache } from 'simple-cache-provider';
 
 export const cache = createCache();
 
-export const function waitForReadyState(mediaEl, done) {
+export function waitForReadyState(mediaEl, done) {
   if (mediaEl.readyState >= 3) {
     return done();
   }
