@@ -8,14 +8,10 @@ function load(attributes) {
     const iframe = document.createElement("iframe");
     Object.keys(attrs).forEach(name => iframe.setAttribute(name, attrs[name]));
     iframe.src = src;
-    iframe.addEventListener(
-      "load",
-      () => {
-        iframe.height = height;
-        resolve(iframe);
-      },
-      true
-    );
+    iframe.onload = () => {
+      iframe.height = height;
+      resolve(iframe);
+    };
     iframe.height = 0;
     document.body.appendChild(iframe);
   });
