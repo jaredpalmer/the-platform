@@ -2,7 +2,7 @@ import React from 'react';
 import { createResource } from 'simple-cache-provider';
 import { cache, waitForReadyState } from './shared';
 
-function load(audio) {
+function load(attributes) {
   const { src, ...attrs } = attributes;
   return new Promise((resolve, reject) => {
     const audio = document.createElement('audio');
