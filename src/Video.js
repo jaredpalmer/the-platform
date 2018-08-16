@@ -1,6 +1,6 @@
 import React from 'react';
 import { createResource } from 'simple-cache-provider';
-import { cache } from './cache';
+import { cache, waitForReadyState } from './cache';
 
 function load(attributes) {
   const { src, ...attrs } = attributes;
@@ -10,13 +10,6 @@ function load(attributes) {
     Object.keys(attrs).forEach(name => video.setAttribute(name, attrs[name]));
     waitForReadyState(video, resolve.bind(null, src));
   });
-}
-
-function waitForReadyState(video, done) {
-  if (video.readyState >= 3) {
-    return done();
-  }
-  requestAnimationFrame(waitForReadyState.bind(null, video, done));
 }
 
 const resource = createResource(load, ({ src }) => src);
