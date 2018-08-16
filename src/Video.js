@@ -1,6 +1,6 @@
 import React from 'react';
 import { createResource } from 'simple-cache-provider';
-import { cache, waitForReadyState } from './cache';
+import { cache, waitForReadyState } from './shared';
 
 function load(attributes) {
   const { src, ...attrs } = attributes;

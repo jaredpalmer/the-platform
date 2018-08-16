@@ -1,6 +1,6 @@
 import React from 'react';
 import { createResource } from 'simple-cache-provider';
-import { cache } from './cache';
+import { cache } from './shared';
 
 function load(attributes) {
   const script = document.createElement('script');
