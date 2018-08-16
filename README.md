@@ -15,6 +15,7 @@ npm i react-async-elements
   - [`<Img>`](#img)
   - [`<Script>`](#script)
   - [`<Video>`](#video)
+  - [`<Audio>`](#audio)
   - [`<IFrame>`](#todo)
   - [`<Embed>`](#todo)
   - [`<Style>`](#todo)
@@ -110,9 +111,39 @@ function App() {
 export default App;
 ```
 
+### `<Audio>`
+
+**props**
+
+- `src: string`
+- `cache?`: Optionally pass your own instance of `simple-cache-provider`
+- anything else you can pass to a `<audio>` tag
+
+```js
+import React from 'react';
+import { Audio } from 'react-async-elements';
+
+function App() {
+  return (
+    <div>
+      <h1>Meavy Boy - Compassion</h1>
+      {/* source: http://freemusicarchive.org/music/Meavy_Boy/EP_71_to_20/Compassion */}
+      <React.Placeholder delayMs={300} fallback={'loading...'}>
+        <Audio
+          src="https://file-dnzavydoqu.now.sh/"
+          preload="auto"
+          autoPlay
+        />
+      </React.Placeholder>
+    </div>
+  );
+}
+
+export default App;
+```
+
 ## Todo
 
-- [ ] `<Audio>`
 - [ ] `<IFrame>`
 - [ ] `<Embed>`
 - [ ] `<Style>`
