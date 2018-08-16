@@ -1,6 +1,6 @@
 # React Async Elements
 
-Suspense-friendly async React elements for common situations
+Suspense-friendly async React elements for common situations.
 
 ```
 npm i react-async-elements
