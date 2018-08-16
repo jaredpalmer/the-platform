@@ -1,12 +1,13 @@
-import React from "react";
-import { createResource } from "simple-cache-provider";
-import { cache } from "./cache";
+import React from 'react';
+import { createResource } from 'simple-cache-provider';
+import { cache } from './cache';
 
-function load(video) {
-  const { src } = video;
+function load(attributes) {
   return new Promise((resolve, reject) => {
-    const video = document.createElement("video");
-    video.src = src;
+    const video = document.createElement('video');
+    Object.keys(attributes).forEach(name =>
+      video.setAttribute(name, attributes[name])
+    );
     waitForReadyState(video, resolve.bind(null, src));
   });
 }
@@ -26,5 +27,5 @@ export const Video = ({ cache, ...props }) => {
 };
 
 Video.defaultProps = {
-  cache
+  cache,
 };
