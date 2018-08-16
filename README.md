@@ -14,8 +14,7 @@ npm i react-async-elements
 - [API](#api)
   - [`<Img>`](#img)
   - [`<Script>`](#script)
-  - [`<Video>`](#todo)
-  - [`<Audio>`](#todo)
+  - [`<Video>`](#video)
   - [`<IFrame>`](#todo)
   - [`<Embed>`](#todo)
   - [`<Style>`](#todo)
@@ -32,7 +31,6 @@ npm i react-async-elements
 **props**
 
 - `src: string`
-- `cache?`: Optionally pass your own instance of `simple-cache-provider`
 - anything else you can pass to an `<img>` tag
 
 ```js
@@ -82,9 +80,38 @@ function App() {
 export default App;
 ```
 
+### `<Video>`
+
+**props**
+
+- `src: string`
+- `cache?`: Optionally pass your own instance of `simple-cache-provider`
+- anything else you can pass to a `<video>` tag
+
+```js
+import React from 'react';
+import { Video } from 'react-async-elements';
+
+function App() {
+  return (
+    <div>
+      <h1>Ken Wheeler on a Scooter</h1>
+      <React.Placeholder delayMs={300} fallback={'loading...'}>
+        <Video
+          src="https://video.twimg.com/ext_tw_video/1029780437437014016/pu/vid/360x640/QLNTqYaYtkx9AbeH.mp4?tag=5"
+          preload="auto"
+          autoPlay
+        />
+      </React.Placeholder>
+    </div>
+  );
+}
+
+export default App;
+```
+
 ## Todo
 
-- [ ] `<Video>`
 - [ ] `<Audio>`
 - [ ] `<IFrame>`
 - [ ] `<Embed>`
