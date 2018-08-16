@@ -1,5 +1,5 @@
 import React from 'react';
-import { Img, Script, Video } from 'react-async-elements';
+import { Img, Script, Video, Audio } from 'react-async-elements';
 
 function App() {
   return (
@@ -11,6 +11,12 @@ function App() {
           autoPlay
           style={{ maxWidth: '100%', margin: '2rem auto', display: 'block' }}
         />
+
+        <Audio
+          src="https://file-dnzavydoqu.now.sh/"
+          controls
+        />
+
         <Img
           src="https://source.unsplash.com/random/2000x1000"
           style={{ maxWidth: '100%', margin: '2rem auto', display: 'block' }}
