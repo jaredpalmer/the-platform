@@ -2,8 +2,11 @@ import React from 'react';
 import { createCache, createResource } from 'simple-cache-provider';
 import { isBrowser } from './utils';
 
-const cache = createCache();
-const resource = createResource(load, ({ href, as }) => `${href}.${as}`);
+export const preloadCache = createCache();
+export const PreloadResource = createResource(
+  load,
+  ({ href, as }) => `${href}.${as}`
+);
 
 function load({ href, as, media = 'all' }) {
   const link = document.createElement('link');
@@ -21,7 +24,7 @@ function load({ href, as, media = 'all' }) {
 
 export const Preload = ({ children, ...rest }) => {
   if (isBrowser) {
-    resource.read(cache, rest);
+    PreloadResource.read(preloadCache, rest);
   }
 
   if (typeof children === 'function') {

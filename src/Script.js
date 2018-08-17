@@ -2,8 +2,8 @@ import React from 'react';
 import { createCache, createResource } from 'simple-cache-provider';
 import { isBrowser } from './utils';
 
-export const cache = createCache();
-export const resource = createResource(load, ({ src }) => src);
+export const scriptCache = createCache();
+export const ScriptResource = createResource(load, ({ src }) => src);
 
 function load({ src }) {
   const script = document.createElement('script');
@@ -20,7 +20,7 @@ function load({ src }) {
 
 export const Script = ({ children, ...rest }) => {
   if (isBrowser) {
-    resource.read(cache, rest);
+    ScriptResource.read(scriptCache, rest);
   }
 
   if (typeof children === 'function') {

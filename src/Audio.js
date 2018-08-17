@@ -2,8 +2,8 @@ import React from 'react';
 import { createCache, createResource } from 'simple-cache-provider';
 import { isBrowser } from './utils';
 
-const cache = createCache();
-const resource = createResource(load, ({ src }) => src);
+export const audioCache = createCache();
+export const AudioResource = createResource(load, ({ src }) => src);
 
 function load({ src }) {
   const audio = document.createElement('audio');
@@ -17,7 +17,7 @@ function load({ src }) {
 
 export const Audio = props => {
   if (isBrowser) {
-    resource.read(cache, props);
+    AudioResource.read(audioCache, props);
   }
 
   return <audio {...props} />;

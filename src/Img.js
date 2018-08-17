@@ -2,8 +2,8 @@ import React from 'react';
 import { createCache, createResource } from 'simple-cache-provider';
 import { isBrowser } from './utils';
 
-const cache = createCache();
-const resource = createResource(load, ({ src }) => src);
+export const imgCache = createCache();
+export const ImgResource = createResource(load, ({ src }) => src);
 
 function load({ src }) {
   const image = new Image();
@@ -17,7 +17,7 @@ function load({ src }) {
 
 export const Img = props => {
   if (isBrowser) {
-    resource.read(cache, props);
+    ImgResource.read(imgCache, props);
   }
 
   return <img {...props} />;
