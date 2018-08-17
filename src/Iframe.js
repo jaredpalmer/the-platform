@@ -9,8 +9,8 @@ function load(attributes) {
     Object.keys(attrs).forEach(name => iframe.setAttribute(name, attrs[name]));
     iframe.src = src;
     iframe.onload = () => {
-      iframe.height = height;
-      resolve(iframe);
+      document.body.removeChild(iframe);
+      resolve();
     };
     iframe.height = 0;
     document.body.appendChild(iframe);
@@ -20,6 +20,6 @@ function load(attributes) {
 const resource = createResource(load, ({ href }) => href);
 
 export const Iframe = props => {
-  const iframeNode = resource.read(cache, props);
-  return <iframe ref={ref => ref.replaceWith(iframeNode)} {...props} />;
+  resource.read(cache, props);
+  return <iframe {...props} />;
 };
