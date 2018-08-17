@@ -9,3 +9,11 @@ export function waitForReadyState(mediaEl, done) {
   }
   requestAnimationFrame(waitForReadyState.bind(null, mediaEl, done));
 }
+
+export function renderChildren(children) {
+  if (typeof children === 'function') {
+    return children();
+  }
+
+  return children;
+}

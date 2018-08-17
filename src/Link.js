@@ -3,28 +3,28 @@ import { createResource } from 'simple-cache-provider';
 import { cache, renderChildren } from './shared';
 
 function load(attributes) {
-  const script = document.createElement('script');
+  const link = document.createElement('link');
+
   Object.keys(attributes).forEach(name =>
-    script.setAttribute(name, attributes[name])
+    link.setAttribute(name, attributes[name])
   );
 
   return new Promise((resolve, reject) => {
-    script.onload = resolve;
-    script.onerror = reject;
-    // @todo decide if this is sensible.
-    // script.async = true
-    document.body.appendChild(script);
+    link.onload = resolve;
+    link.onerror = reject;
+
+    document.head.appendChild(link);
   });
 }
 
 const resource = createResource(load, ({ src }) => src);
 
-export const Script = ({ cache, children, ...props }) => {
+export const Link = ({ cache, children, ...props }) => {
   resource.read(cache, props);
 
   return renderChildren(children);
 };
 
-Script.defaultProps = {
+Link.defaultProps = {
   cache,
 };
