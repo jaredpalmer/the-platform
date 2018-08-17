@@ -15,5 +15,9 @@ export function renderChildren(children) {
     return children();
   }
 
-  return children;
+  if (children) {
+    return children;
+  }
+
+  return null;
 }
