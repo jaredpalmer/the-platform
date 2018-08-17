@@ -18,7 +18,7 @@ npm i react-async-elements
   - [`<Audio>`](#audio)
   - [`<IFrame>`](#todo)
   - [`<Embed>`](#todo)
-  - [`<Style>`](#todo)
+  - [`<Stylesheet>`](#todo)
 - [Todo](#todo)
 - [Playing with Suspense](#playing-with-suspense)
 - [Authors](#authors)
@@ -142,7 +142,7 @@ export default App;
 
 - [ ] `<IFrame>`
 - [ ] `<Embed>`
-- [ ] `<Style>`
+- [ ] `<Stylesheet>`
 - [ ] Better error handling
 
 ## Playing with Suspense
