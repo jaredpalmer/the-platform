@@ -12,13 +12,15 @@ function App() {
           style={{ maxWidth: '100%', margin: '2rem auto', display: 'block' }}
         />
 
-        <Audio
-          src="https://file-dnzavydoqu.now.sh/"
-          controls
-        />
+        <Audio src="https://file-dnzavydoqu.now.sh/" controls />
 
         <Img
           src="https://source.unsplash.com/random/2000x1000"
+          onLoad={e => {
+            console.log(e.target.dataset);
+          }}
+          className="hello"
+          data-hello="shoot"
           style={{ maxWidth: '100%', margin: '2rem auto', display: 'block' }}
         />
 
