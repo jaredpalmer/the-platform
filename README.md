@@ -142,8 +142,6 @@ export default App;
 
 - [ ] `<IFrame>`
 - [ ] `<Embed>`
-- [ ] `<Stylesheet>`
-- [ ] Better error handling
 
 ## Playing with Suspense
 

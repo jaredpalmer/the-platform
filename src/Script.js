@@ -1,12 +1,13 @@
 import React from 'react';
-import { createResource } from 'simple-cache-provider';
-import { cache } from './shared';
+import { createCache, createResource } from 'simple-cache-provider';
+import { isBrowser } from './utils';
 
-function load(attributes) {
+export const scriptCache = createCache();
+export const ScriptResource = createResource(load, ({ src }) => src);
+
+function load({ src }) {
   const script = document.createElement('script');
-  Object.keys(attributes).forEach(name =>
-    script.setAttribute(name, attributes[name])
-  );
+  script.src = src;
 
   return new Promise((resolve, reject) => {
     script.onload = resolve;
@@ -17,18 +18,14 @@ function load(attributes) {
   });
 }
 
-const resource = createResource(load, ({ src }) => src);
-
-export const Script = ({ cache, children, ...props }) => {
-  resource.read(cache, props);
+export const Script = ({ children, ...rest }) => {
+  if (isBrowser) {
+    ScriptResource.read(scriptCache, rest);
+  }
 
   if (typeof children === 'function') {
     return children();
   }
 
   return children;
-};
-
-Script.defaultProps = {
-  cache,
 };
