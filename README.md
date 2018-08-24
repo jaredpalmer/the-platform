@@ -16,6 +16,7 @@ npm i react-async-elements
   - [`<Script>`](#script)
   - [`<Video>`](#video)
   - [`<Audio>`](#audio)
+  - [`<Preload>`](#preload)
   - [`<IFrame>`](#todo)
   - [`<Embed>`](#todo)
   - [`<Stylesheet>`](#todo)
@@ -130,6 +131,39 @@ function App() {
       {/* source: http://freemusicarchive.org/music/Meavy_Boy/EP_71_to_20/Compassion */}
       <React.Placeholder delayMs={300} fallback={'loading...'}>
         <Audio src="https://file-dnzavydoqu.now.sh/" preload="auto" autoPlay />
+      </React.Placeholder>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### `<Preload>`
+
+Preload a resource with `<link rel="preload">`.
+
+**More Info:**
+
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+- [Google Developer Blog](https://developers.google.com/web/updates/2016/03/link-rel-preload)
+
+**props**
+
+- `href: string`
+- `as: string` - resource type
+
+```js
+import React from 'react';
+import { Preload, Script } from 'react-async-elements';
+
+function App() {
+  return (
+    <div>
+      <h1>Preload</h1>
+      <React.Placeholder delayMs={300} fallback={'loading...'}>
+        <Preload href="https://js.stripe.com/v3/" rel="preload" as="script" />
+        <Script src="https://js.stripe.com/v3/" async />
       </React.Placeholder>
     </div>
   );
