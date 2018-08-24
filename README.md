@@ -17,9 +17,9 @@ npm i react-async-elements
   - [`<Video>`](#video)
   - [`<Audio>`](#audio)
   - [`<Preload>`](#preload)
+  - [`<Stylesheet>`](#stylesheet)
   - [`<IFrame>`](#todo)
   - [`<Embed>`](#todo)
-  - [`<Stylesheet>`](#todo)
 - [Todo](#todo)
 - [Playing with Suspense](#playing-with-suspense)
 - [Authors](#authors)
@@ -164,6 +164,32 @@ function App() {
       <React.Placeholder delayMs={300} fallback={'loading...'}>
         <Preload href="https://js.stripe.com/v3/" rel="preload" as="script" />
         <Script src="https://js.stripe.com/v3/" async />
+      </React.Placeholder>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### `<Stylesheet>`
+
+Lazy load a stylesheet.
+
+**props**
+
+- `href: string`
+
+```js
+import React from 'react';
+import { Stylesheet } from 'react-async-elements';
+
+function App() {
+  return (
+    <div>
+      <h1>Styles</h1>
+      <React.Placeholder delayMs={300} fallback={'loading...'}>
+        <Stylesheet href="style.css" />
       </React.Placeholder>
     </div>
   );
