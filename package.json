@@ -19,40 +19,41 @@
     "Script.js"
   ],
   "scripts": {
-    "start": "NODE_ENV=development babel -w ./src --out-dir dist",
-    "build": "rimraf dist && NODE_ENV=production babel ./src --out-dir dist",
+    "start": "NODE_ENV=development tsc -w",
+    "build": "rimraf dist && NODE_ENV=production tsc",
     "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'exampe/src/**/*' 'example/README.md' 'README.md'",
     "test": "echo yolo",
     "prepare": "npm run build",
     "deploy": "np",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
   },
   "peerDependencies": {
     "react": ">=16",
     "react-dom": ">=16"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-runtime": "^6.26.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
     "np": "^3.0.4",
     "prettier": "^1.14.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "tsconfig-palmerhq": "^1.0.2",
+    "tslint-config-palmerhq": "^1.0.2",
+    "typescript": "^3.0.3"
   },
   "dependencies": {
-    "simple-cache-provider": "^0.7.0"
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "simple-cache-provider": "^0.7.0",
+    "tslint": "^5.11.0"
   },
   "lint-staged": {
-    "**/*.{js,jsx}": [
+    "**/*.{ts,tsx}": [
       "npm run format",
+      "npm run lint",
       "git add"
     ]
   },
