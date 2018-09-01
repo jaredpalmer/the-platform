@@ -12,13 +12,10 @@
     "simple-cache-provider": "./vendor/simple-cache-provider"
   },
   "devDependencies": {
-    "parcel": "^1.9.7",
-    "parcel-bundler": "^1.9.7",
-    "react": ">=16"
-  },
-  "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "react-async-elements": "^0.4.0",
-    "react-dom": ">=16"
+    "parcel-bundler": "^1.9.7",
+    "parcel": "^1.9.7",
+    "react-dom": ">=16",
+    "react": ">=16"
   }
 }
