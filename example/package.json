@@ -14,6 +14,11 @@
   "devDependencies": {
     "parcel": "^1.9.7",
     "parcel-bundler": "^1.9.7",
-    "react": "15.x || 16.x"
+    "react": ">=16"
+  },
+  "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "react-async-elements": "^0.4.0",
+    "react-dom": ">=16"
   }
 }
