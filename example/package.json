@@ -6,14 +6,13 @@
   "scripts": {
     "start": "NODE_ENV=development parcel index.html"
   },
-  "alias": {
-    "react": "./vendor/react",
-    "react-dom": "./vendor/react-dom",
-    "react-cache": "./vendor/react-cache"
-  },
   "devDependencies": {
     "parcel": "^1.9.7",
-    "parcel-bundler": "^1.9.7",
-    "react": "15.x || 16.x"
+    "parcel-bundler": "^1.9.7"
+  },
+  "dependencies": {
+    "react": "^16.6.0-alpha.8af6728",
+    "react-cache": "^1.1.2",
+    "react-dom": "^16.6.0-alpha.8af6728"
   }
 }
