@@ -29,7 +29,8 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "react-dom": ">=16"
+    "react-dom": ">=16",
+    "react-cache": "^1.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -57,8 +58,5 @@
     "trailingComma": "es5",
     "singleQuote": true,
     "semi": true
-  },
-  "dependencies": {
-    "react-cache": "^1.1.2"
   }
 }
