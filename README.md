@@ -59,7 +59,7 @@ export default App;
 
 - `src: string`
 - `children?: () => React.ReactNode` - This render prop will only execute _after_ the script has loaded.
-- `cache?`: Optionally pass your own instance of `simple-cache-provider`
+- `cache?`: Optionally pass your own instance of `react-cache`
 - anything else you can pass to a `<script>` tag
 
 ```js
@@ -87,7 +87,7 @@ export default App;
 **props**
 
 - `src: string`
-- `cache?`: Optionally pass your own instance of `simple-cache-provider`
+- `cache?`: Optionally pass your own instance of `react-cache`
 - anything else you can pass to a `<video>` tag
 
 ```js
@@ -117,7 +117,7 @@ export default App;
 **props**
 
 - `src: string`
-- `cache?`: Optionally pass your own instance of `simple-cache-provider`
+- `cache?`: Optionally pass your own instance of `react-cache`
 - anything else you can pass to a `<audio>` tag
 
 ```js

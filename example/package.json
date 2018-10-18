@@ -9,7 +9,7 @@
   "alias": {
     "react": "./vendor/react",
     "react-dom": "./vendor/react-dom",
-    "simple-cache-provider": "./vendor/simple-cache-provider"
+    "react-cache": "./vendor/react-cache"
   },
   "devDependencies": {
     "parcel": "^1.9.7",
