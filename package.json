@@ -1,8 +1,8 @@
 {
-  "name": "react-async-elements",
+  "name": "the-platform",
   "version": "0.4.0",
   "author": "Jared Palmer <jared@palmer.net>",
-  "repository": "palmerhq/react-async-elements",
+  "repository": "palmerhq/the-platform",
   "keywords": [
     "react",
     "react-dom",
@@ -29,7 +29,8 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "react-dom": ">=16"
+    "react-dom": ">=16",
+    "react-cache": "^1.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -46,9 +47,6 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "rimraf": "^2.6.2"
-  },
-  "dependencies": {
-    "simple-cache-provider": "^0.7.0"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [

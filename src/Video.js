@@ -1,5 +1,5 @@
 import React from 'react';
-import { createCache, createResource } from 'simple-cache-provider';
+import { createCache, createResource } from 'react-cache';
 import { isBrowser } from './utils';
 
 export const videoCache = createCache();
