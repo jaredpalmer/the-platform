@@ -6,12 +6,11 @@ export const audioCache = createCache();
 export const AudioResource = createResource(load, ({ src }) => src);
 
 function load({ src }) {
-  const audio = document.createElement('audio');
+  const audio = new Audio(src);
 
   return new Promise((resolve, reject) => {
-    audio.oncanplay = resolve;
+    audio.onloadeddata = () => resolve(audio);
     audio.onerror = reject;
-    audio.src = src;
   });
 }
 
