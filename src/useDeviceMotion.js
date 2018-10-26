@@ -20,16 +20,11 @@ export const useDeviceMotion = () => {
     interval: 0,
   });
 
-  const handle = e => {
-    setMotion({
-      acceleration: e.acceleration,
-      accelerationIncludingGravity: e.accelerationIncludingGravity,
-      rotationRate: e.rotationRate,
-      interval: e.interval,
-    });
-  };
-
   React.useEffect(() => {
+    const handle = deviceMotionEvent => {
+      setMotion(deviceMotionEvent);
+    };
+
     window.addEventListener('devicemotion', handle);
 
     return () => {
