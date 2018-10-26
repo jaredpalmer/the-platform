@@ -1,5 +1,5 @@
 import React from 'react';
-import { unstable_createResource as createResource } from 'react-cache';
+import { createResource } from './createResource';
 
 const PositionResource = createResource(load, positionOptions => 'geoposition');
 

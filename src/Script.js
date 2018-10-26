@@ -2,7 +2,7 @@ import React from 'react';
 import { createResource } from './createResource';
 import { isBrowser } from './utils';
 
-export const ScriptResource = createResource(src => {
+export const ScriptResource = createResource(({ src }) => {
   const script = document.createElement('script');
   script.src = src;
 
@@ -15,13 +15,9 @@ export const ScriptResource = createResource(src => {
   });
 });
 
-export function useScript(src) {
-  return ScriptResource.read(src);
-}
-
 export const Script = ({ children, ...rest }) => {
   if (isBrowser) {
-    ScriptResource.read(rest.src);
+    ScriptResource.read({ src: rest.src });
   }
 
   if (typeof children === 'function') {
@@ -30,3 +26,7 @@ export const Script = ({ children, ...rest }) => {
 
   return children;
 };
+
+export function useScript({ src }) {
+  return ScriptResource.read({ src });
+}
