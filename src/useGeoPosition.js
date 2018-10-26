@@ -1,25 +1,42 @@
-import * as React from 'react';
+import React from 'react';
+import { unstable_createResource as createResource } from 'react-cache';
 
-export const useGeoPosition = () => {
-  const [coords, setCoords] = React.useState();
+const PositionResource = createResource(load, positionOptions => 'geoposition');
+
+function load(positionOptions) {
+  return new Promise((resolve, reject) =>
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        resolve(position);
+      },
+      error => {
+        reject(error);
+      },
+      positionOptions
+    )
+  );
+}
+
+export const useGeoPosition = positionOptions => {
+  // We should read new initialCoords for each component but useMemo
+  // does not seem to memoize when a component is suspended
+  // @todo determine if this is intended behavior or a bug
+  // const initialAccessTime = React.useMemo(() => Date.now(), []);
+
+  const initialCoords = PositionResource.read();
+  const [position, setPosition] = React.useState(initialCoords);
 
   React.useEffect(() => {
-    const geoListener = navigator.geolocation.watchPosition(
-      position => {
-        setCoords({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-        });
+    const listener = navigator.geolocation.watchPosition(
+      positionUpdate => {
+        setPosition(positionUpdate);
       },
-      error => {}
+      () => null,
+      positionOptions
     );
 
-    return () => {
-      navigator.geolocation.clearWatch(geoListener);
-    };
+    return () => navigator.geolocation.clearWatch(listener);
   }, []);
 
-  return {
-    coords,
-  };
+  return position;
 };
