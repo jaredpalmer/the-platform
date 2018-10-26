@@ -126,7 +126,7 @@ import { useGeoPosition } from 'the-platform';
 
 const Example = () => {
   const { coords } = useGeoPosition();
-  return <div>{coords && `${cords.longitude}, ${coords.latitude}`}</div>;
+  return <div>{coords && `${coords.longitude}, ${coords.latitude}`}</div>;
 };
 
 export default Example;
