@@ -116,7 +116,7 @@ export default Example;
 
 Retrieve Geo position from the browser.
 
-- `options: object`: [`PositionOtions`](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions) object.
+- `options: object`: [`PositionOptions`](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions) object.
 
 ### `useGeoPosition()`
 
