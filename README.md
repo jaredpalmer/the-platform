@@ -146,7 +146,7 @@ import { useMedia } from 'the-platform';
 
 const Example = () => {
   const small = useMedia('(min-width: 400px)');
-  const medium = useMediai({ minWidth: 800 });
+  const medium = useMedia({ minWidth: 800 });
 
   return (
     <div>
