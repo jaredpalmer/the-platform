@@ -1,23 +1,21 @@
 import React from 'react';
-import { createCache, createResource } from 'react-cache';
+import { createResource } from './createResource';
 import { isBrowser } from './utils';
 
-export const videoCache = createCache();
-export const VideoResource = createResource(load, ({ src }) => src);
-
-function load({ src }) {
-  const video = document.createElement('video');
-
+export const VideoResource = createResource(src => {
   return new Promise((resolve, reject) => {
-    video.oncanplay = resolve;
-    video.onerror = reject;
+    const video = document.createElement('video');
     video.src = src;
+    video.oncanplay = () => {
+      resolve(video);
+    };
+    video.onerror = reject;
   });
-}
+});
 
 export const Video = props => {
   if (isBrowser) {
-    VideoResource.read(videoCache, props);
+    VideoResource.read(props.src);
   }
 
   return <video {...props} />;

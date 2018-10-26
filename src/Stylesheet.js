@@ -1,20 +1,18 @@
 import React from 'react';
-import { createCache, createResource } from 'react-cache';
+import { createResource } from './createResource';
 import { isBrowser } from './utils';
 
-export const stylesheetCache = createCache();
 export const StylesheetResource = createResource(
   load,
   ({ href, media }) => `${href}.${media}`
 );
 
 function load({ href, media = 'all' }) {
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = href;
-  link.media = media;
-
   return new Promise((resolve, reject) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.media = media;
     link.onload = resolve;
     link.onerror = reject;
     document.body.appendChild(link);
@@ -23,7 +21,7 @@ function load({ href, media = 'all' }) {
 
 export const Stylesheet = props => {
   if (isBrowser) {
-    StylesheetResource.read(stylesheetCache, props);
+    StylesheetResource.read(props);
   }
 
   return <link {...props} />;

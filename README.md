@@ -1,9 +1,9 @@
-# React Async Elements
+# The Platform
 
 Suspense-friendly async React elements for common situations.
 
 ```
-npm i react-async-elements
+npm i the-platform
 ```
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -37,7 +37,7 @@ npm i react-async-elements
 
 ```js
 import React from 'react';
-import { Img } from 'react-async-elements';
+import { Img } from 'the-platform';
 
 function App() {
   return (
@@ -64,7 +64,7 @@ export default App;
 
 ```js
 import React from 'react';
-import { Script } from 'react-async-elements';
+import { Script } from 'the-platform';
 
 function App() {
   return (
@@ -92,7 +92,7 @@ export default App;
 
 ```js
 import React from 'react';
-import { Video } from 'react-async-elements';
+import { Video } from 'the-platform';
 
 function App() {
   return (
@@ -122,7 +122,7 @@ export default App;
 
 ```js
 import React from 'react';
-import { Audio } from 'react-async-elements';
+import { Audio } from 'the-platform';
 
 function App() {
   return (
@@ -155,7 +155,7 @@ Preload a resource with `<link rel="preload">`.
 
 ```js
 import React from 'react';
-import { Preload, Script } from 'react-async-elements';
+import { Preload, Script } from 'the-platform';
 
 function App() {
   return (
@@ -182,7 +182,7 @@ Lazy load a stylesheet.
 
 ```js
 import React from 'react';
-import { Stylesheet } from 'react-async-elements';
+import { Stylesheet } from 'the-platform';
 
 function App() {
   return (

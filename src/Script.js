@@ -1,11 +1,8 @@
 import React from 'react';
-import { createCache, createResource } from 'react-cache';
+import { createResource } from './createResource';
 import { isBrowser } from './utils';
 
-export const scriptCache = createCache();
-export const ScriptResource = createResource(load, ({ src }) => src);
-
-function load({ src }) {
+export const ScriptResource = createResource(src => {
   const script = document.createElement('script');
   script.src = src;
 
@@ -16,11 +13,11 @@ function load({ src }) {
     // script.async = true
     document.body.appendChild(script);
   });
-}
+});
 
 export const Script = ({ children, ...rest }) => {
   if (isBrowser) {
-    ScriptResource.read(scriptCache, rest);
+    ScriptResource.read(rest.src);
   }
 
   if (typeof children === 'function') {
