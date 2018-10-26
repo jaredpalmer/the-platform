@@ -160,7 +160,7 @@ This will throw a promise (must use with Suspense).
 
 Object containing:
 
-- `src: string`: The stylesheet's URI.
+- `src: string`: The script's URI.
 
 ```js
 import { useScript } from 'the-platform';
