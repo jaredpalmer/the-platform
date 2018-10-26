@@ -26,3 +26,7 @@ export const Stylesheet = props => {
 
   return <link {...props} />;
 };
+
+export function useStylesheet(props) {
+  return StylesheetResource.read(props);
+}

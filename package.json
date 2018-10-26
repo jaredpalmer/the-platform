@@ -1,6 +1,6 @@
 {
   "name": "the-platform",
-  "version": "0.5.0",
+  "version": "0.7.0",
   "author": "Jared Palmer <jared@palmer.net>",
   "repository": "palmerhq/the-platform",
   "keywords": [
@@ -43,7 +43,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
     "np": "^3.0.4",
-    "prettier": "^1.14.2",
+    "prettier": "^1.14.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "rimraf": "^2.6.2"
@@ -58,5 +58,10 @@
     "trailingComma": "es5",
     "singleQuote": true,
     "semi": true
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "react-cache": "^2.0.0-alpha.0",
+    "json2mq": "^0.2.0"
   }
 }

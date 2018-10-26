@@ -7,13 +7,17 @@ export const ScriptResource = createResource(src => {
   script.src = src;
 
   return new Promise((resolve, reject) => {
-    script.onload = resolve;
+    script.onload = () => resolve(script);
     script.onerror = reject;
     // @todo decide if this is sensible.
     // script.async = true
     document.body.appendChild(script);
   });
 });
+
+export function useScript(src) {
+  return ScriptResource.read(src);
+}
 
 export const Script = ({ children, ...rest }) => {
   if (isBrowser) {
