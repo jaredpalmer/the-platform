@@ -18,9 +18,6 @@ npm i the-platform --save
 yarn add the-platform
 ```
 
-## Examples
-
-- [Suspense Components](https://codesandbox.io/s/4jq5joqo99)
 
 ## API
 
