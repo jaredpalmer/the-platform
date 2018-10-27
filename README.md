@@ -20,7 +20,7 @@ yarn add the-platform
 
 ## Examples
 
-[Components](https://codesandbox.io/s/4jq5joqo99)
+- [Suspense Components](https://codesandbox.io/s/4jq5joqo99)
 
 ## API
 
