@@ -2,8 +2,7 @@
 
 # The Platform
 
-Browser API's turned into React Hooks and Suspense-friendly React elements for common situations.
-
+Web API's turned into React Hooks and Suspense-friendly React components.
 ## Install
 
 ### With npm
