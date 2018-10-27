@@ -4,7 +4,6 @@
 
 Web API's turned into React Hooks and Suspense-friendly React components. #useThePlatform
 
-- [CodeSandbox](https://codesandbox.io/s/4jq5joqo99)
 
 ## Install
 
@@ -18,6 +17,10 @@ npm i the-platform --save
 ```sh
 yarn add the-platform
 ```
+
+## Examples
+
+[Components](https://codesandbox.io/s/4jq5joqo99)
 
 ## API
 
