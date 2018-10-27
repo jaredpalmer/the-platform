@@ -6,8 +6,13 @@ Browser API's turned into React Hooks and Suspense-friendly React elements for c
 
 ## Install
 
+### With npm
+```sh
+npm i the-platform --save
 ```
-npm i the-platform
+### Or with yarn
+```sh
+yarn add the-platform
 ```
 
 ## API
