@@ -2,8 +2,10 @@
 
 # The Platform
 
-Web API's turned into React Hooks and Suspense-friendly React components.
+Web API's turned into React Hooks and Suspense-friendly React components. #useThePlatform
 ## Install
+
+> Note React 16.7+ is required for Hooks. 
 
 ### With npm
 ```sh
