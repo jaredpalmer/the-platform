@@ -3,13 +3,13 @@ import throttle from 'lodash/throttle';
 
 export const useWindowSize = (options = {}) => {
   const { throttleMs = 100 } = options;
-  const [scroll, setScroll] = React.useState({
+  const [size, setSize] = React.useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
 
   const handle = throttle(() => {
-    setScroll({
+    setSize({
       width: window.innerWidth,
       height: window.innerHeight,
     });
@@ -23,5 +23,5 @@ export const useWindowSize = (options = {}) => {
     };
   }, []);
 
-  return scroll;
+  return size;
 };
