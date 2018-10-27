@@ -3,9 +3,12 @@
 # The Platform
 
 Web API's turned into React Hooks and Suspense-friendly React components. #useThePlatform
+
+- [CodeSandbox](https://codesandbox.io/s/4jq5joqo99)
+
 ## Install
 
-> Note React 16.7+ is required for Hooks. 
+> Note: React 16.7+ is required for Hooks. 
 
 ### With npm
 ```sh
