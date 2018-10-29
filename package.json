@@ -33,9 +33,8 @@
     "precommit": "lint-staged"
   },
   "peerDependencies": {
-    "react": ">=16",
-    "react-cache": "^2.0.0-alpha.0",
-    "react-dom": ">=16"
+    "react": ">=16.6.0",
+    "react-dom": ">=16.6.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -50,8 +49,8 @@
     "lint-staged": "^7.2.2",
     "np": "^3.0.4",
     "prettier": "^1.14.3",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0",
     "rimraf": "^2.6.2"
   },
   "lint-staged": {
