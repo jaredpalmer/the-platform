@@ -3,10 +3,15 @@
   "version": "0.8.0",
   "author": "Jared Palmer <jared@palmer.net>",
   "repository": "palmerhq/the-platform",
+  "description": "React Hooks and Suspense-ready Components for Web API's and elements",
   "keywords": [
     "react",
     "react-dom",
-    "suspense"
+    "suspense",
+    "hooks",
+    "react-hooks",
+    "react-suspense",
+    "react-cache"
   ],
   "license": "MIT",
   "main": "dist/index.js",
