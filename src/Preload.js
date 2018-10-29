@@ -1,6 +1,5 @@
 import React from 'react';
 import { createResource } from './createResource';
-import { isBrowser } from './utils';
 
 export const PreloadResource = createResource(
   load,
@@ -21,9 +20,7 @@ function load({ href, as, media = 'all' }) {
 }
 
 export const Preload = ({ children, ...rest }) => {
-  if (isBrowser) {
-    PreloadResource.read(rest);
-  }
+  PreloadResource.read(rest);
 
   if (typeof children === 'function') {
     return children();

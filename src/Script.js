@@ -1,6 +1,5 @@
 import React from 'react';
 import { createResource } from './createResource';
-import { isBrowser } from './utils';
 
 export const ScriptResource = createResource(({ src }) => {
   const script = document.createElement('script');
@@ -16,10 +15,7 @@ export const ScriptResource = createResource(({ src }) => {
 });
 
 export const Script = ({ children, ...rest }) => {
-  if (isBrowser) {
-    ScriptResource.read({ src: rest.src });
-  }
-
+  ScriptResource.read({ src: rest.src });
   if (typeof children === 'function') {
     return children();
   }

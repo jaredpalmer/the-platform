@@ -7,8 +7,6 @@ let createResource;
 
 if (unstable_createResource) {
   createResource = unstable_createResource;
-} else {
-  createResource = cSource;
 }
 
 export { createResource };

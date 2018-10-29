@@ -1,6 +1,5 @@
 import React from 'react';
 import { createResource } from './createResource';
-import { isBrowser } from './utils';
 
 export const VideoResource = createResource(src => {
   return new Promise((resolve, reject) => {
@@ -14,9 +13,6 @@ export const VideoResource = createResource(src => {
 });
 
 export const Video = props => {
-  if (isBrowser) {
-    VideoResource.read(props.src);
-  }
-
+  VideoResource.read(props.src);
   return <video {...props} />;
 };

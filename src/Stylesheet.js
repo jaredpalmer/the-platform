@@ -1,6 +1,5 @@
 import React from 'react';
 import { createResource } from './createResource';
-import { isBrowser } from './utils';
 
 export const StylesheetResource = createResource(
   load,
@@ -20,10 +19,7 @@ function load({ href, media = 'all' }) {
 }
 
 export const Stylesheet = props => {
-  if (isBrowser) {
-    StylesheetResource.read(props);
-  }
-
+  StylesheetResource.read(props);
   return <link {...props} />;
 };
 

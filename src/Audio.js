@@ -1,6 +1,5 @@
 import React from 'react';
 import { createResource } from './createResource';
-import { isBrowser } from './utils';
 
 export const AudioResource = createResource(src => {
   return new Promise((resolve, reject) => {
@@ -12,9 +11,6 @@ export const AudioResource = createResource(src => {
 });
 
 export const Audio = props => {
-  if (isBrowser) {
-    AudioResource.read(props.src);
-  }
-
+  AudioResource.read(props.src);
   return <audio {...props} />;
 };
