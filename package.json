@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "json2mq": "^0.2.0",
-    "lodash": "^4.17.11",
+    "lodash.throttle": "^4.1.1",
     "react-cache": "^2.0.0-alpha.0"
   }
 }
