@@ -2,12 +2,17 @@ import React from 'react';
 import { createResource } from './createResource';
 import { isBrowser } from './utils';
 
+type StylesheetProps = {
+  href: string;
+  media?: string;
+};
+
 export const StylesheetResource = createResource(
   load,
   ({ href, media }) => `${href}.${media}`
 );
 
-function load({ href, media = 'all' }) {
+function load({ href, media = 'all' }: StylesheetProps) {
   return new Promise((resolve, reject) => {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -19,7 +24,7 @@ function load({ href, media = 'all' }) {
   });
 }
 
-export const Stylesheet = props => {
+export const Stylesheet: React.SFC<StylesheetProps> = props => {
   if (isBrowser) {
     StylesheetResource.read(props);
   }
@@ -27,6 +32,6 @@ export const Stylesheet = props => {
   return <link {...props} />;
 };
 
-export function useStylesheet(props) {
+export function useStylesheet(props: StylesheetProps) {
   return StylesheetResource.read(props);
 }

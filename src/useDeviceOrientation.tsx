@@ -1,14 +1,19 @@
 import * as React from 'react';
 
 export const useDeviceOrientation = () => {
-  const [orientation, setOrientation] = React.useState({
+  const [orientation, setOrientation] = React.useState<{
+    alpha: number | null;
+    beta: number | null;
+    gamma: number | null;
+    absolute: boolean;
+  }>({
     alpha: null,
     beta: null,
     gamma: null,
     absolute: false,
   });
 
-  const handle = e => {
+  const handle = (e: DeviceOrientationEvent) => {
     setOrientation({
       beta: e.beta,
       alpha: e.alpha,

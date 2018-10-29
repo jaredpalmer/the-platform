@@ -1,8 +1,10 @@
-import React from 'react';
 import { createResource } from './createResource';
 import { isBrowser } from './utils';
 
-export const ScriptResource = createResource(({ src }) => {
+type ScriptProps = {
+  src: string;
+};
+export const ScriptResource = createResource(({ src }: ScriptProps) => {
   const script = document.createElement('script');
   script.src = src;
 
@@ -15,7 +17,7 @@ export const ScriptResource = createResource(({ src }) => {
   });
 });
 
-export const Script = ({ children, ...rest }) => {
+export const Script: React.SFC<ScriptProps> = ({ children, ...rest }) => {
   if (isBrowser) {
     ScriptResource.read({ src: rest.src });
   }
@@ -27,6 +29,6 @@ export const Script = ({ children, ...rest }) => {
   return children;
 };
 
-export function useScript({ src }) {
+export function useScript({ src }: ScriptProps) {
   return ScriptResource.read({ src });
 }

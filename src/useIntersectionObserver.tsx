@@ -1,6 +1,9 @@
 import * as React from 'react';
 
-export const useIntersectionObserver = (target, root) => {
+export const useIntersectionObserver = (
+  target: React.RefObject<HTMLElement>,
+  root: React.RefObject<HTMLElement>
+) => {
   const [isIntersecting, setIntersecting] = React.useState(false);
 
   React.useEffect(() => {
@@ -19,7 +22,9 @@ export const useIntersectionObserver = (target, root) => {
       observer.observe(target.current);
     }
     return () => {
-      observer.unobserve(target.current);
+      if (target.current) {
+        observer.unobserve(target.current);
+      }
     };
   }, []);
 
