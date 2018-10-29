@@ -17,11 +17,7 @@
   "main": "dist/index.js",
   "source": "src/index.js",
   "files": [
-    "dist",
-    "Audio.js",
-    "Video.js",
-    "Img.js",
-    "Script.js"
+    "dist"
   ],
   "scripts": {
     "start": "NODE_ENV=development babel -w ./src --out-dir dist",

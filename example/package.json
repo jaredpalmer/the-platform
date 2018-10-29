@@ -1,28 +1,22 @@
 {
   "name": "example",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=development parcel index.html"
+  },
+  "alias": {
+    "the-platform": "../src"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "parcel-bundler": "^1.9.7"
+  },
   "dependencies": {
     "react": "^16.7.0-alpha.0",
     "react-cache": "^2.0.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0",
-    "react-scripts": "2.0.5",
-    "scheduler": "^0.10.0",
-    "the-platform": "^0.8.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "scheduler": "^0.10.0"
+  }
 }
