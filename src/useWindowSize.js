@@ -1,5 +1,5 @@
 import React from 'react';
-import throttle from 'lodash.throttle';
+import { throttle } from './utils';
 
 const events = new Set();
 const onResize = () => events.forEach(fn => fn());
@@ -22,9 +22,9 @@ export const useWindowSize = (options = {}) => {
     if (events.size === 0) {
       window.addEventListener('resize', onResize, true);
     }
-    
+
     events.add(handle);
-    
+
     return () => {
       events.delete(handle);
 
