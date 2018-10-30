@@ -4,7 +4,7 @@ import { Img, Script, Video, Audio, Stylesheet } from 'the-platform';
 function App() {
   return (
     <div className="App">
-      <h1>React Async Elements</h1>
+      <h1>The Platform</h1>
       <React.Suspense maxDuration={300} fallback={<div>loading....</div>}>
         <Video
           src="https://video.twimg.com/ext_tw_video/1029780437437014016/pu/vid/360x640/QLNTqYaYtkx9AbeH.mp4?tag=5"
