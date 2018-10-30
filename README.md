@@ -20,9 +20,11 @@ npm i the-platform --save
 yarn add the-platform
 ```
 
-## Playground
+## Examples
 
-- [CodeSandbox](https://codesandbox.io/s/8kw6mpp3k9)
+- Components
+  - [Basics](https://codesandbox.io/s/8kw6mpp3k9)
+  - [Low Quality Image Placeholder](https://codesandbox.io/s/vo3zjoq90)
 
 ## API
 
