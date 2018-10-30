@@ -1,5 +1,4 @@
 import { createResource } from './createResource';
-import { isBrowser } from './utils';
 
 type ScriptProps = {
   src: string;
@@ -18,9 +17,7 @@ export const ScriptResource = createResource(({ src }: ScriptProps) => {
 });
 
 export const Script: React.SFC<ScriptProps> = ({ children, ...rest }) => {
-  if (isBrowser) {
-    ScriptResource.read({ src: rest.src });
-  }
+  ScriptResource.read({ src: rest.src });
 
   if (typeof children === 'function') {
     return children();

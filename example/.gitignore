@@ -1,0 +1,8 @@
+node_modules
+temp
+dist
+*.log
+example/.cache
+example/dist
+.DS_Store
+.vscode

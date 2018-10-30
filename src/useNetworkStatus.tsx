@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 export const useNetworkStatus = () => {
   const [status, setStatus] = React.useState(navigator.onLine);

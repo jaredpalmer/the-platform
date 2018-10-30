@@ -1,5 +1,5 @@
-import * as React from 'react';
-import throttle from 'lodash/throttle';
+import React from 'react';
+import throttle from 'lodash.throttle';
 
 export const useWindowSize = (options: { throttleMs?: number } = {}) => {
   const { throttleMs = 100 } = options;

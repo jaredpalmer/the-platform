@@ -1,6 +1,5 @@
 import React from 'react';
 import { createResource } from './createResource';
-import { isBrowser } from './utils';
 
 export const AudioResource = createResource((src: string) => {
   return new Promise((resolve, reject) => {
@@ -18,9 +17,6 @@ export const Audio: React.SFC<
     HTMLAudioElement
   >
 > = props => {
-  if (isBrowser) {
-    AudioResource.read(props.src);
-  }
-
+  AudioResource.read(props.src);
   return <audio {...props} />;
 };

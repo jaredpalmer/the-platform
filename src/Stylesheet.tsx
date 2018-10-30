@@ -1,6 +1,5 @@
 import React from 'react';
 import { createResource } from './createResource';
-import { isBrowser } from './utils';
 
 type StylesheetProps = {
   href: string;
@@ -25,10 +24,7 @@ function load({ href, media = 'all' }: StylesheetProps) {
 }
 
 export const Stylesheet: React.SFC<StylesheetProps> = props => {
-  if (isBrowser) {
-    StylesheetResource.read(props);
-  }
-
+  StylesheetResource.read(props);
   return <link {...props} />;
 };
 

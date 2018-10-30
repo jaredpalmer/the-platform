@@ -1,5 +1,4 @@
 import { createResource } from './createResource';
-import { isBrowser } from './utils';
 
 type PreloadProps = {
   href: string;
@@ -26,9 +25,7 @@ function load({ href, as, media = 'all' }: PreloadProps) {
 }
 
 export const Preload: React.SFC<PreloadProps> = ({ children, ...rest }) => {
-  if (isBrowser) {
-    PreloadResource.read(rest);
-  }
+  PreloadResource.read(rest);
 
   if (typeof children === 'function') {
     return children();
