@@ -1,8 +1,7 @@
 import React from 'react';
-import throttle from 'lodash.throttle';
+import { throttle } from './utils';
 
-export const useWindowScrollPosition = (options = {}) => {
-  const { throttleMs = 100 } = options;
+export const useWindowScrollPosition = ({ throttleMs = 100 } = {}) => {
   const [scroll, setScroll] = React.useState({
     x: window.pageXOffset,
     y: window.pageYOffset,
