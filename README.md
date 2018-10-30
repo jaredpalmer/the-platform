@@ -2,6 +2,11 @@
 
 # The Platform
 
+[![CircleCI](https://circleci.com/gh/palmerhq/the-platform.svg?style=svg)](https://circleci.com/gh/palmerhq/the-platform)
+[![Stable Release](https://img.shields.io/npm/v/the-platform.svg)](https://npm.im/the-platform)
+[![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/the-platform)
+[![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE) 
+
 Web API's turned into React Hooks and Suspense-friendly React components. #useThePlatform
 
 ## Install
