@@ -16,8 +16,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development babel -w ./src --out-dir dist",
-    "build": "rimraf dist && NODE_ENV=production babel ./src --out-dir .",
+    "start": "NODE_ENV=development babel -w ./src --out-dir .",
+    "build": "NODE_ENV=production babel ./src --out-dir .",
     "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'exampe/src/**/*' 'example/README.md' 'README.md'",
     "test": "echo yolo",
     "prepare": "npm run build",
@@ -47,8 +47,7 @@
     "np": "^3.0.4",
     "prettier": "^1.14.3",
     "react": "^16.7.0-alpha.0",
-    "react-dom": "^16.7.0-alpha.0",
-    "rimraf": "^2.6.2"
+    "react-dom": "^16.7.0-alpha.0"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
