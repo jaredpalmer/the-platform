@@ -122,7 +122,7 @@ Retrieve network status from the browser.
 
 Object containing:
 
-- `online: boolean`: `true` if the browser has network access. `false`
+- `isOnline: boolean`: `true` if the browser has network access. `false`
   otherwise.
 
 - `offlineAt?: Date`: Date when network connection was lost.
@@ -133,7 +133,7 @@ Object containing:
 import { useNetworkStatus } from 'the-platform';
 
 const Example = () => {
-  const { online, offlineAt } = useNetworkStatus();
+  const { isOnline, offlineAt } = useNetworkStatus();
 
   // ...
 };
