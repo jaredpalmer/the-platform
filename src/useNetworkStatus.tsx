@@ -24,7 +24,7 @@ export const useNetworkStatus = () => {
   }, []);
 
   return {
-    online: status,
+    isOnline: status,
     offlineAt,
   };
 };
