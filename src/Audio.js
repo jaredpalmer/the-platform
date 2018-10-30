@@ -1,7 +1,7 @@
 import React from 'react';
 import { createResource } from './createResource';
 
-export const AudioResource = unstable_createResource(src => {
+export const AudioResource = createResource(src => {
   return new Promise((resolve, reject) => {
     const audio = document.createElement('audio');
     audio.src = src;
