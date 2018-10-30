@@ -1,12 +1,13 @@
 import React from 'react';
 import { createResource } from './createResource';
 
-export const AudioResource = createResource(src => {
+export const AudioResource = unstable_createResource(src => {
   return new Promise((resolve, reject) => {
-    const audio = new Audio(src);
+    const audio = document.createElement('audio');
+    audio.src = src;
     audio.onloadeddata = () => resolve(audio);
     audio.onerror = reject;
-    document.body.appendChild(audio);
+    document.body.append(audio);
   });
 });
 
