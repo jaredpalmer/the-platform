@@ -18,7 +18,8 @@
   "typings": "dist/index.d.ts",
   "source": "src/index.tsx",
   "files": [
-    "dist"
+    "dist",
+    "typings"
   ],
   "scripts": {
     "start": "NODE_ENV=development babel -w ./src --extensions \".ts,.tsx\" --out-dir dist",
