@@ -22,10 +22,9 @@ yarn add the-platform
 
 ## Examples
 
-- React Suspense
-  - [Suspense Child Siblings](https://codesandbox.io/s/8kw6mpp3k9)
-  - [Low Quality Image Placeholder](https://codesandbox.io/s/vo3zjoq90)
-  - [Using `<Script>` and Stripe Checkout](https://codesandbox.io/s/wy63pynp55)
+- [Basics](https://codesandbox.io/s/8kw6mpp3k9)
+- [Low Quality Image Placeholder](https://codesandbox.io/s/vo3zjoq90)
+- [Using `<Script>` and Stripe Checkout](https://codesandbox.io/s/wy63pynp55)
 
 ## API
 
