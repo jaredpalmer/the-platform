@@ -28,12 +28,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
-
-      - persist_to_workspace:
-          root: ~/repo
-          paths: .
 workflows:
   version: 2
-  test:
+  build_test:
     jobs:
       - test
