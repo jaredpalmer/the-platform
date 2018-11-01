@@ -2,6 +2,8 @@
 
 # The Platform
 
+[![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/the-platform)
+
 Web API's turned into React Hooks and Suspense-friendly React components. #useThePlatform
 
 ## Install
@@ -20,11 +22,16 @@ npm i the-platform --save
 yarn add the-platform
 ```
 
+## Examples
+
+- [Basics](https://codesandbox.io/s/8kw6mpp3k9)
+- [Low Quality Image Placeholder](https://codesandbox.io/s/vo3zjoq90)
+- [Using `<Script>` and Stripe Checkout](https://codesandbox.io/s/wy63pynp55)
+
 ## API
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 
 - [Hooks](#hooks)
   - [`useDeviceMotion()`](#usedevicemotion)
@@ -408,3 +415,19 @@ function App() {
 
 export default App;
 ```
+
+## Authors
+
+- [Jared Palmer](https://twitter.com/jaredpalmer)
+- [Jack Cross](https://twitter.com/crosscompile)
+- [Nathan Force](https://twitter.com/forcetheissue)
+
+
+## Inspiration
+
+- [react-fns](https://github.com/jaredpalmer/react-fns)
+- AOL.
+
+---
+
+MIT License

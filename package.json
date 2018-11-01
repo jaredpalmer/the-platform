@@ -1,6 +1,6 @@
 {
   "name": "the-platform",
-  "version": "0.8.0",
+  "version": "0.9.3",
   "author": "Jared Palmer <jared@palmer.net>",
   "repository": "palmerhq/the-platform",
   "description": "React Hooks and Suspense-ready Components for Web API's and elements",
@@ -14,25 +14,25 @@
     "react-cache"
   ],
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "source": "src/index.tsx",
-  "files": [
-    "dist",
-    "typings"
-  ],
+  "main": "index.js",
+  "typings": "index.d.ts",
   "scripts": {
-    "start": "NODE_ENV=development babel -w ./src --extensions \".ts,.tsx\" --out-dir dist",
-    "build": "rimraf dist && NODE_ENV=production babel ./src --extensions \".ts,.tsx\" --out-dir dist && tsc",
+    "start": "NODE_ENV=development babel -w ./src --out-dir .",
+    "build": "NODE_ENV=production babel ./src --out-dir . && tsc",
     "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'exampe/src/**/*' 'example/README.md' 'README.md'",
-    "test": "echo yolo",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "prepare": "npm run build",
-    "deploy": "np",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "deploy": "np"
   },
   "peerDependencies": {
     "react": ">=16.6.0",
     "react-dom": ">=16.6.0"
+  },
+  "dependencies": {
+    "json2mq": "^0.2.0",
+    "react-cache": "^2.0.0-alpha.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -47,7 +47,10 @@
     "@types/lodash.throttle": "^4.1.4",
     "@types/react": "^16.4.18",
     "doctoc": "^1.3.1",
+    "fs-extra": "^7.0.0",
     "husky": "^0.14.3",
+    "jest": "^23.6.0",
+    "jest-dom": "^2.1.0",
     "lint-staged": "^7.2.2",
     "np": "^3.0.4",
     "prettier": "^1.14.3",
@@ -56,7 +59,16 @@
     "rimraf": "^2.6.2",
     "tsconfig-palmerhq": "^1.0.2",
     "tslint-config-palmerhq": "^1.0.2",
-    "typescript": "^3.1.3"
+    "typescript": "^3.1.3",
+    "react-testing-library": "^5.2.3"
+  },
+  "jest": {
+    "verbose": false,
+    "setupTestFrameworkScriptFile": "<rootDir>/tests/jest.setup.js",
+    "testRegex": "test.js$",
+    "moduleDirectories": [
+      "node_modules"
+    ]
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
@@ -71,10 +83,5 @@
     "trailingComma": "es5",
     "singleQuote": true,
     "semi": true
-  },
-  "dependencies": {
-    "json2mq": "^0.2.0",
-    "lodash.throttle": "^4.1.1",
-    "react-cache": "^2.0.0-alpha.0"
   }
 }
