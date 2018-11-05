@@ -29,7 +29,7 @@ export function useMedia(query, defaultMatches = true) {
       active = false;
       mediaQueryList.removeListener(listener);
     };
-  }, []);
+  }, [query]);
 
   return matches;
 }
