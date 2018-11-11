@@ -4,7 +4,7 @@ export function throttle<T extends (...args: any[]) => void>(
   scope?: any
 ): T {
   let last: number, deferTimer: number;
-  return function() {
+  return function(this: any) {
     let context = scope || this;
 
     let now = Date.now(),
@@ -20,5 +20,5 @@ export function throttle<T extends (...args: any[]) => void>(
       last = now;
       func.apply(context, args);
     }
-  };
+  } as T;
 }
