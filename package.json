@@ -17,8 +17,8 @@
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
-    "start": "NODE_ENV=development babel -w ./src --out-dir .",
-    "build": "NODE_ENV=production babel ./src --out-dir . && tsc",
+    "start": "NODE_ENV=development babel -w ./src --out-dir . --extensions \".ts,.tsx\"",
+    "build": "NODE_ENV=production rimraf *.d.ts && babel ./src --out-dir . --extensions \".ts,.tsx\" && tsc",
     "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'exampe/src/**/*' 'example/README.md' 'README.md'",
     "test": "jest",
     "test:watch": "jest --watch",

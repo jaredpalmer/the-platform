@@ -6,7 +6,8 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "declaration": true,
-    "declarationDir": "./dist",
+    "declarationDir": "./",
     "emitDeclarationOnly": true
-  }
+  },
+  "exclude": []
 }
