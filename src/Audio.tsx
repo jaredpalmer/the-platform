@@ -7,7 +7,7 @@ export const AudioResource = createResource((src: string) => {
     audio.src = src;
     audio.onloadeddata = () => resolve(audio);
     audio.onerror = reject;
-    document.body.appendChild(audio);
+    document.body.append(audio);
   }) as Promise<HTMLAudioElement>;
 });
 
