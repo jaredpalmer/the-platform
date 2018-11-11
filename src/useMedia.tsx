@@ -32,7 +32,7 @@ export function useMedia(
       active = false;
       mediaQueryList.removeListener(listener);
     };
-  }, []);
+  }, [query]);
 
   return matches;
 }
