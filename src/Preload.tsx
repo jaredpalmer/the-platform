@@ -24,7 +24,7 @@ function load({ href, as, media = 'all' }: PreloadProps) {
   });
 }
 
-export const Preload: React.SFC<PreloadProps> = ({ children, ...rest }) => {
+export const Preload: React.FC<PreloadProps> = ({ children, ...rest }) => {
   PreloadResource.read(rest);
 
   if (typeof children === 'function') {

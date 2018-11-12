@@ -11,7 +11,7 @@ export const AudioResource = createResource((src: string) => {
   }) as Promise<HTMLAudioElement>;
 });
 
-export const Audio: React.SFC<
+export const Audio: React.FC<
   React.DetailedHTMLProps<
     React.AudioHTMLAttributes<HTMLAudioElement>,
     HTMLAudioElement

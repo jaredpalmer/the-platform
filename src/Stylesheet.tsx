@@ -23,7 +23,7 @@ function load({ href, media = 'all' }: StylesheetProps) {
   });
 }
 
-export const Stylesheet: React.SFC<StylesheetProps> = props => {
+export const Stylesheet: React.FC<StylesheetProps> = props => {
   StylesheetResource.read(props);
   return <link {...props} />;
 };

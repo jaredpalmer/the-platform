@@ -12,7 +12,7 @@ export const VideoResource = createResource((src: string) => {
   }) as Promise<HTMLVideoElement>;
 });
 
-export const Video: React.SFC<
+export const Video: React.FC<
   React.DetailedHTMLProps<
     React.VideoHTMLAttributes<HTMLVideoElement>,
     HTMLVideoElement

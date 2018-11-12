@@ -15,7 +15,7 @@ export const ScriptResource = createResource(({ src }: ScriptProps) => {
   });
 });
 
-export const Script: React.SFC<ScriptProps> = ({ children, ...rest }) => {
+export const Script: React.FC<ScriptProps> = ({ children, ...rest }) => {
   ScriptResource.read(rest);
 
   if (typeof children === 'function') {

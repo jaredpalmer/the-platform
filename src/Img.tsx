@@ -10,7 +10,7 @@ export const ImgResource = createResource((src: string) => {
   }) as Promise<Event>;
 });
 
-export const Img: React.SFC<
+export const Img: React.FC<
   React.DetailedHTMLProps<
     React.ImgHTMLAttributes<HTMLImageElement>,
     HTMLImageElement
