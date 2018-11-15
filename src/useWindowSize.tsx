@@ -1,10 +1,10 @@
 import React from 'react';
 import { throttle } from './utils';
 
-const events = new Set();
+const events = new Set<() => void>();
 const onResize = () => events.forEach(fn => fn());
 
-export const useWindowSize = (options = {}) => {
+export const useWindowSize = (options: { throttleMs?: number } = {}) => {
   const { throttleMs = 100 } = options;
   const [size, setSize] = React.useState({
     width: window.innerWidth,

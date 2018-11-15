@@ -1,9 +1,12 @@
 import React from 'react';
 import { createResource } from './createResource';
 
-const PositionResource = createResource(load, positionOptions => 'geoposition');
+const PositionResource = createResource(
+  load,
+  (positionOptions: PositionOptions) => 'geoposition'
+);
 
-function load(positionOptions) {
+function load(positionOptions: PositionOptions): Promise<Position> {
   return new Promise((resolve, reject) =>
     navigator.geolocation.getCurrentPosition(
       position => {
@@ -17,7 +20,7 @@ function load(positionOptions) {
   );
 }
 
-export const useGeoPosition = positionOptions => {
+export const useGeoPosition = (positionOptions: PositionOptions) => {
   // We should read new initialCoords for each component but useMemo
   // does not seem to memoize when a component is suspended
   // @todo determine if this is intended behavior or a bug

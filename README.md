@@ -33,6 +33,7 @@ yarn add the-platform
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [Hooks](#hooks)
   - [`useDeviceMotion()`](#usedevicemotion)
   - [`useDeviceOrientation()`](#usedeviceorientation)
@@ -50,6 +51,8 @@ yarn add the-platform
   - [`<Audio>`](#audio)
   - [`<Preload>`](#preload)
   - [`<Stylesheet>`](#stylesheet)
+- [Authors](#authors)
+- [Inspiration](#inspiration)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -421,7 +424,6 @@ export default App;
 - [Jared Palmer](https://twitter.com/jaredpalmer)
 - [Jack Cross](https://twitter.com/crosscompile)
 - [Nathan Force](https://twitter.com/forcetheissue)
-
 
 ## Inspiration
 

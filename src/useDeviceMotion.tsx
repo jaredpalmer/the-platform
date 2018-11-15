@@ -1,7 +1,15 @@
 import React from 'react';
 
 export const useDeviceMotion = () => {
-  const [motion, setMotion] = React.useState({
+  const [motion, setMotion] = React.useState<
+    Pick<
+      DeviceMotionEvent,
+      | 'acceleration'
+      | 'accelerationIncludingGravity'
+      | 'rotationRate'
+      | 'interval'
+    >
+  >({
     acceleration: {
       x: null,
       y: null,
@@ -21,7 +29,7 @@ export const useDeviceMotion = () => {
   });
 
   React.useEffect(() => {
-    const handle = deviceMotionEvent => {
+    const handle = (deviceMotionEvent: DeviceMotionEvent) => {
       setMotion(deviceMotionEvent);
     };
 

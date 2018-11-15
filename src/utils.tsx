@@ -1,7 +1,10 @@
-export const throttle = (func, threshhold, scope) => {
-  threshhold || (threshhold = 250);
-  let last, deferTimer;
-  return function() {
+export function throttle<T extends (...args: any[]) => void>(
+  func: T,
+  threshhold: number = 250,
+  scope?: any
+): T {
+  let last: number, deferTimer: number;
+  return function(this: any) {
     let context = scope || this;
 
     let now = Date.now(),
@@ -17,5 +20,5 @@ export const throttle = (func, threshhold, scope) => {
       last = now;
       func.apply(context, args);
     }
-  };
-};
+  } as T;
+}
