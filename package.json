@@ -66,7 +66,10 @@
   "jest": {
     "verbose": false,
     "setupTestFrameworkScriptFile": "<rootDir>/tests/jest.setup.js",
-    "testRegex": "test.js$",
+    "testRegex": "test.tsx$",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
     "moduleDirectories": [
       "node_modules"
     ]
