@@ -1,7 +1,7 @@
 import React from 'react';
 import { createResource } from './createResource';
 
-const hashingFn = ({ src, srcSet }) => `${src}${srcset}`;
+const hashingFn = ({ src, srcSet }) => `${src}${srcSet}`;
 
 export const ImgResource = createResource(({ src, srcSet }) => {
   return new Promise((resolve, reject) => {
