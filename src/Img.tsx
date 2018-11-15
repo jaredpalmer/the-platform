@@ -1,7 +1,7 @@
 import React from 'react';
 import { createResource } from './createResource';
 
-const hashingFn = ({ src, srcSet }) => `${src}${srcSet}`;
+const hashingFn = ({ src, srcSet }: { src: string, srcSet?: string}) => `${src}${srcSet}`;
 
 export const ImgResource = createResource(({ src, srcSet }: { src: string, srcSet?: string}) => {
   return new Promise((resolve, reject) => {
@@ -13,7 +13,7 @@ export const ImgResource = createResource(({ src, srcSet }: { src: string, srcSe
     image.onload = resolve;
     image.onerror = reject;
   }) as Promise<Event>;
-});
+}, hashingFn);
 
 export const Img: React.FC<
   React.DetailedHTMLProps<
@@ -22,6 +22,8 @@ export const Img: React.FC<
   >
 > = props => {
   const { src, srcSet } = props;
-  ImgResource.read({ src, srcSet });
+  if (src) {
+    ImgResource.read({ src, srcSet });
+  }
   return <img {...props} />;
 };
