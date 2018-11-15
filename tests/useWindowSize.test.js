@@ -14,7 +14,7 @@ function App() {
 afterEach(cleanup);
 
 describe('useWindowSize()', () => {
-  test('useWindowSize returns correct values', () => {
+  test('returns correct dimensions', () => {
     // custom window dimensions
     window.innerWidth = 2000;
     window.innerHeight = 1000;
