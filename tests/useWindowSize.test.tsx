@@ -1,3 +1,4 @@
+///<reference path="../node_modules/jest-dom/extend-expect.d.ts" />
 import * as React from 'react';
 import { cleanup, render } from 'react-testing-library';
 import { useWindowSize } from '../src/useWindowSize';
