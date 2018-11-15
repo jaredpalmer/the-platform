@@ -1,3 +1,5 @@
+import React from 'react';
+import { render, Simulate, cleanup } from 'react-testing-library';
 import { useWindowSize } from '../src/useWindowSize';
 
 function App() {
