@@ -6,6 +6,7 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "declaration": true,
+    "baseUrl": "./",
     "declarationDir": "./",
     "emitDeclarationOnly": true
   },
