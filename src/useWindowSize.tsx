@@ -11,14 +11,14 @@ export const useWindowSize = (options: { throttleMs?: number } = {}) => {
     height: window.innerHeight,
   });
 
-  const handle = throttle(() => {
-    setSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  }, throttleMs);
-
   React.useEffect(() => {
+    const handle = throttle(() => {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }, throttleMs);
+
     if (events.size === 0) {
       window.addEventListener('resize', onResize, true);
     }

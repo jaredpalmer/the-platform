@@ -9,14 +9,14 @@ export const useWindowScrollPosition = ({
     y: window.pageYOffset,
   });
 
-  const handle = throttle(() => {
-    setScroll({
-      x: window.pageXOffset,
-      y: window.pageYOffset,
-    });
-  }, throttleMs);
-
   React.useEffect(() => {
+    const handle = throttle(() => {
+      setScroll({
+        x: window.pageXOffset,
+        y: window.pageYOffset,
+      });
+    }, throttleMs);
+
     window.addEventListener('scroll', handle);
 
     return () => {
