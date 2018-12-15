@@ -3,7 +3,7 @@ import {
   createResource as cSource,
 } from 'react-cache';
 
-let createResource;
+let createResource: typeof cSource;
 
 if (unstable_createResource) {
   createResource = unstable_createResource;

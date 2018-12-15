@@ -2,7 +2,7 @@ import React from 'react';
 
 export const useNetworkStatus = () => {
   const [status, setStatus] = React.useState(navigator.onLine);
-  const [offlineAt, setOfflineAt] = React.useState();
+  const [offlineAt, setOfflineAt] = React.useState<Date | undefined>(undefined);
 
   React.useEffect(() => {
     const handleOnline = () => {

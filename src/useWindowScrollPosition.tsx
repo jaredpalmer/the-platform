@@ -1,7 +1,9 @@
 import React from 'react';
 import { throttle } from './utils';
 
-export const useWindowScrollPosition = ({ throttleMs = 100 } = {}) => {
+export const useWindowScrollPosition = ({
+  throttleMs = 100,
+}: { throttleMs?: number } = {}) => {
   const [scroll, setScroll] = React.useState({
     x: window.pageXOffset,
     y: window.pageYOffset,
