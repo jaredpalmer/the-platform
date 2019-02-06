@@ -8,7 +8,7 @@ Web API's turned into React Hooks and Suspense-friendly React components. #useTh
 
 ## Install
 
-> Note: React 16.7+ is required for Hooks.
+> Note: React 16.8+ is required for Hooks.
 
 ### With npm
 
