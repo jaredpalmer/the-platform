@@ -29,11 +29,11 @@
   },
   "peerDependencies": {
     "react": ">=16.6.0",
+    "react-cache": "^2.0.0-alpha.1",
     "react-dom": ">=16.6.0"
   },
   "dependencies": {
-    "json2mq": "^0.2.0",
-    "react-cache": "^2.0.0-alpha.0"
+    "json2mq": "^0.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",

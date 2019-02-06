@@ -1,10 +1,10 @@
 import React from 'react';
 import { createResource } from './createResource';
 
-type StylesheetProps = {
+export interface StylesheetProps {
   href: string;
   media?: string;
-};
+}
 
 export const StylesheetResource = createResource(
   load,

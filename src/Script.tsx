@@ -1,9 +1,9 @@
 import { createResource } from './createResource';
 
-type ScriptProps = {
-  src: string;
-};
-export const ScriptResource = createResource(({ src }: ScriptProps) => {
+export interface ScriptProps {
+  src: HTMLScriptElement['src'];
+}
+export const ScriptResource = createResource((src: ScriptProps['src']) => {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
     script.src = src;
@@ -16,7 +16,7 @@ export const ScriptResource = createResource(({ src }: ScriptProps) => {
 });
 
 export const Script: React.FC<ScriptProps> = ({ children, ...rest }) => {
-  ScriptResource.read(rest);
+  ScriptResource.read(rest.src);
 
   if (typeof children === 'function') {
     return children();
@@ -26,5 +26,5 @@ export const Script: React.FC<ScriptProps> = ({ children, ...rest }) => {
 };
 
 export function useScript({ src }: ScriptProps) {
-  return ScriptResource.read({ src });
+  return ScriptResource.read(src);
 }

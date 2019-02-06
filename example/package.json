@@ -7,16 +7,16 @@
     "start": "NODE_ENV=development parcel index.html"
   },
   "alias": {
-    "the-platform": "../src"
+    "the-platform": "../.",
+    "react-cache": "./vendor/react-cache"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.2.2",
     "parcel-bundler": "^1.9.7"
   },
   "dependencies": {
-    "react": "^16.7.0-alpha.0",
-    "react-cache": "^2.0.0-alpha.0",
-    "react-dom": "^16.7.0-alpha.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "scheduler": "^0.10.0"
   }
 }

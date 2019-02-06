@@ -12,7 +12,7 @@ function App() {
           style={{ maxWidth: '100%', margin: '2rem auto', display: 'block' }}
         />
 
-        <Audio src="https://file-dnzavydoqu.now.sh/" controls />
+        <Audio src="https://audio.simplecast.com/436a52d8.mp3" controls />
 
         <Img
           src="https://source.unsplash.com/random/2000x1000"
