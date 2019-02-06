@@ -14,9 +14,9 @@
     "parcel-bundler": "^1.9.7"
   },
   "dependencies": {
-    "react": "^16.7.0-alpha.0",
+    "react": "^16.8.1",
     "react-cache": "^2.0.0-alpha.0",
-    "react-dom": "^16.7.0-alpha.0",
+    "react-dom": "^16.8.1",
     "scheduler": "^0.10.0"
   }
 }
