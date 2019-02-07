@@ -1,4 +1,5 @@
-import { createResource } from './createResource';
+import React from 'react';
+import { Link } from './Link';
 
 type PreloadProps = {
   href: string;
@@ -6,30 +7,6 @@ type PreloadProps = {
   media?: string;
 };
 
-export const PreloadResource = createResource(
-  load,
-  ({ href, as }) => `${href}.${as}`
-);
-
-function load({ href, as, media = 'all' }: PreloadProps) {
-  return new Promise((resolve, reject) => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = as;
-    link.media = media;
-    link.href = href;
-    link.onload = resolve;
-    link.onerror = reject;
-    document.body.appendChild(link);
-  });
-}
-
-export const Preload: React.FC<PreloadProps> = ({ children, ...rest }) => {
-  PreloadResource.read(rest);
-
-  if (typeof children === 'function') {
-    return children();
-  }
-
-  return children;
+export const Preload: React.FC<PreloadProps> = props => {
+  return <Link rel="preload" {...props} />;
 };
