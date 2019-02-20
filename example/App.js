@@ -1,5 +1,5 @@
 import React from 'react';
-import { Img, Script, Video, Audio, Stylesheet } from 'the-platform';
+import { Img, Script, Video, Audio, Stylesheet, FontFace } from 'the-platform';
 
 function App() {
   return (
@@ -24,6 +24,13 @@ function App() {
         </Script>
 
         <Stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+
+        <FontFace
+          family="News Cycle"
+          source="url(https://fonts.gstatic.com/s/newscycle/v15/CSR64z1Qlv-GDxkbKVQ_fOAKTfl8tOQ.woff2) format('woff2')"
+        >
+          <h2 style={{ fontFamily: 'News Cycle' }}>Yay, News Cycle</h2>
+        </FontFace>
       </React.Suspense>
     </div>
   );
