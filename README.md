@@ -33,6 +33,7 @@ yarn add the-platform
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [Hooks](#hooks)
   - [`useDeviceMotion()`](#usedevicemotion)
   - [`useDeviceOrientation()`](#usedeviceorientation)
@@ -41,6 +42,7 @@ yarn add the-platform
   - [`useMedia()`](#usemedia)
   - [`useScript()`](#usescript)
   - [`useStylesheet()`](#usestylesheet)
+  - [`useFontFace()`](#usefontface)
   - [`useWindowScrollPosition()`](#usewindowscrollposition)
   - [`useWindowSize()`](#usewindowsize)
 - [Components](#components)
@@ -50,6 +52,7 @@ yarn add the-platform
   - [`<Audio>`](#audio)
   - [`<Preload>`](#preload)
   - [`<Stylesheet>`](#stylesheet)
+  - [`<FontFace>`](#fontface)
 - [Authors](#authors)
 - [Inspiration](#inspiration)
 
@@ -207,6 +210,39 @@ import { useStylesheet } from 'the-platform';
 
 const Example = () => {
   const _unused = useStylesheet({ href: 'normalize.css' });
+
+  // ...
+};
+```
+
+### `useFontFace()`
+
+This will throw a promise (must use with Suspense).
+
+#### Arguments
+
+Object containing:
+
+- `family: string`
+- `source: string`
+- `display?: string`
+- `featureSettings?: string`
+- `stretch?: string`
+- `style?: string`
+- `unicodeRange?: string`
+- `variant?: string`
+- `variationSettings?: string`
+- `weight?: string | number`
+
+```js
+import { useFontFace } from 'the-platform';
+
+const Example = () => {
+  const _unused = useFontFace({
+    family: 'News Cycle',
+    source:
+      'url(https://fonts.gstatic.com/s/newscycle/v15/CSR64z1Qlv-GDxkbKVQ_fOAKTfl8tOQ.woff2) format("woff2")',
+  });
 
   // ...
 };
@@ -410,6 +446,44 @@ function App() {
       <h1>Styles</h1>
       <React.Suspense maxDuration={300} fallback={'loading...'}>
         <Stylesheet href="style.css" />
+      </React.Suspense>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### `<FontFace>`
+
+Lazy load a web font.
+
+#### Props
+
+- `family: string`
+- `source: string`
+- `display?: string`
+- `featureSettings?: string`
+- `stretch?: string`
+- `style?: string`
+- `unicodeRange?: string`
+- `variant?: string`
+- `variationSettings?: string`
+- `weight?: string | number`
+
+```js
+import React from 'react';
+import { FontFace } from 'the-platform';
+
+function App() {
+  return (
+    <div>
+      <h1>Web fonts</h1>
+      <React.Suspense maxDuration={300} fallback={'loading...'}>
+        <FontFace
+          family="News Cycle"
+          source="url(https://fonts.gstatic.com/s/newscycle/v15/CSR64z1Qlv-GDxkbKVQ_fOAKTfl8tOQ.woff2) format('woff2')"
+        />
       </React.Suspense>
     </div>
   );
