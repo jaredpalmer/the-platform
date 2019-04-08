@@ -1,7 +1,9 @@
-src/*
-example/*
-node_modules/*
+src
+example
+node_modules
 .babelrc
 dist
 .babelrc
-typings/*
+typings
+tests
+.circleci
