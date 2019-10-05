@@ -33,6 +33,9 @@ export const useDeviceMotion = () => {
       setMotion(deviceMotionEvent);
     };
 
+    if (typeof window === 'undefined') {
+      return;
+    }
     window.addEventListener('devicemotion', handle);
 
     return () => {

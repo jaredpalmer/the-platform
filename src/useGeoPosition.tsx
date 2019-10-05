@@ -7,8 +7,11 @@ const PositionResource = createResource(
 );
 
 function load(positionOptions: PositionOptions): Promise<Position> {
-  return new Promise((resolve, reject) =>
-    navigator.geolocation.getCurrentPosition(
+  return new Promise((resolve, reject) => {
+    if (typeof navigator === undefined) {
+      return undefined;
+    }
+    return navigator.geolocation.getCurrentPosition(
       position => {
         resolve(position);
       },
@@ -16,8 +19,8 @@ function load(positionOptions: PositionOptions): Promise<Position> {
         reject(error);
       },
       positionOptions
-    )
-  );
+    );
+  });
 }
 
 export const useGeoPosition = (positionOptions: PositionOptions) => {
@@ -30,6 +33,9 @@ export const useGeoPosition = (positionOptions: PositionOptions) => {
   const [position, setPosition] = React.useState(initialCoords);
 
   React.useEffect(() => {
+    if (typeof navigator === 'undefined') {
+      return;
+    }
     const listener = navigator.geolocation.watchPosition(
       positionUpdate => {
         setPosition(positionUpdate);
