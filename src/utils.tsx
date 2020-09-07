@@ -1,18 +1,17 @@
 export function throttle<T extends (...args: any[]) => void>(
   func: T,
-  threshold: number = 250,
-  scope?: any
+  threshold = 250,
+  scope?: unknown
 ): T {
   let last: number, deferTimer: number;
-  return function(this: any) {
-    let context = scope || this;
+  return function (this: any, ...args: any) {
+    const context: unknown = scope || this;
 
-    let now = Date.now(),
-      args = arguments;
+    const now = Date.now();
     if (last && now < last + threshold) {
       // hold on to it
       clearTimeout(deferTimer);
-      deferTimer = setTimeout(function() {
+      deferTimer = window.setTimeout(function () {
         last = now;
         func.apply(context, args);
       }, threshold);
