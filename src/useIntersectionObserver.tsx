@@ -7,6 +7,9 @@ export const useIntersectionObserver = (
   const [isIntersecting, setIntersecting] = React.useState(false);
 
   React.useEffect(() => {
+    if (typeof IntersectionObserver === 'undefined') {
+      return;
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting !== isIntersecting) {

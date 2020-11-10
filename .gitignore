@@ -5,5 +5,5 @@ dist
 example/.cache
 .DS_Store
 .vscode
-*.js
-*.d.ts
+/*.js
+/*.d.ts

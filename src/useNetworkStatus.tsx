@@ -15,6 +15,10 @@ export const useNetworkStatus = () => {
       setOfflineAt(new Date());
     };
 
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
     return () => {

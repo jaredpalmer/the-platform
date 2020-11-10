@@ -1,6 +1,11 @@
-src/*
-example/*
-node_modules/*
+src
+example
+node_modules
 .babelrc
 dist
 .babelrc
+typings
+tests
+.circleci
+tslint.json
+tsconfig.json

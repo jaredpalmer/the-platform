@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, Simulate, cleanup } from 'react-testing-library';
+import { render, cleanup } from 'react-testing-library';
 import { useWindowScrollPosition } from '../src/useWindowScrollPosition';
 
 function App() {

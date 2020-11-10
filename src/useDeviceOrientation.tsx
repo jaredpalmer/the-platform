@@ -23,6 +23,9 @@ export const useDeviceOrientation = () => {
   };
 
   React.useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
     window.addEventListener('deviceorientation', handle);
 
     return () => {

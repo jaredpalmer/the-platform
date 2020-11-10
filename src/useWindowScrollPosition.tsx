@@ -5,8 +5,8 @@ export const useWindowScrollPosition = ({
   throttleMs = 100,
 }: { throttleMs?: number } = {}) => {
   const [scroll, setScroll] = React.useState({
-    x: window.pageXOffset,
-    y: window.pageYOffset,
+    x: typeof window === 'undefined' ? 0 : window.pageXOffset,
+    y: typeof window === 'undefined' ? 0 : window.pageYOffset,
   });
 
   React.useEffect(() => {

@@ -2,13 +2,13 @@
 
 # The Platform
 
-[![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/the-platform)
+[![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/the-platform) [![Discord](https://img.shields.io/discord/769256827007139912?label=%F0%9F%92%AC%20%20join%20us%20on%20discord&style=plastic)](https://discord.com/invite/RevdZTYMzr)
 
 Web API's turned into React Hooks and Suspense-friendly React components. #useThePlatform
 
 ## Install
 
-> Note: React 16.7+ is required for Hooks.
+> Note: React 16.8+ is required for Hooks.
 
 ### With npm
 
@@ -153,6 +153,7 @@ const Example = () => {
 #### Arguments
 
 `query: string | object`: media query string or object (parsed by [json2mq](https://github.com/akiran/json2mq)).
+`defaultMatches: boolean`: a boolean providing a default value for matches
 
 #### Returns
 
