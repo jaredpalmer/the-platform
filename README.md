@@ -153,6 +153,7 @@ const Example = () => {
 #### Arguments
 
 `query: string | object`: media query string or object (parsed by [json2mq](https://github.com/akiran/json2mq)).
+`defaultMatches: boolean`: a boolean providing a default value for matches
 
 #### Returns
 
