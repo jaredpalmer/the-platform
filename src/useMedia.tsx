@@ -9,6 +9,9 @@ export function useMedia(
 
   useEffect(
     () => {
+      if (typeof window === 'undefined') {
+        return;
+      }
       const mediaQueryList = window.matchMedia(
         typeof query === 'string' ? query : json2mq(query)
       );

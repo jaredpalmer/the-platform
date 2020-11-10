@@ -7,8 +7,8 @@ const onResize = () => events.forEach(fn => fn());
 export const useWindowSize = (options: { throttleMs?: number } = {}) => {
   const { throttleMs = 100 } = options;
   const [size, setSize] = React.useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: typeof window === 'undefined' ? 0 : window.innerWidth,
+    height: typeof window === 'undefined' ? 0 : window.innerHeight,
   });
 
   const handle = throttle(() => {
@@ -19,6 +19,10 @@ export const useWindowSize = (options: { throttleMs?: number } = {}) => {
   }, throttleMs);
 
   React.useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     if (events.size === 0) {
       window.addEventListener('resize', onResize, true);
     }
